@@ -10,7 +10,7 @@
 <!-- Яндекс Вебмастер: вставьте код вместо YANDEX_CODE и раскомментируйте (достаточно на главной) -->
 <!-- <meta name="yandex-verification" content="YANDEX_CODE"> -->
 <meta name="theme-color" content="#0E3B36">
-<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.png" type="image/png" sizes="120x120">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
@@ -226,6 +226,53 @@ footer a{color:#C9D8D4}
   .memo-card,.memo-warn{padding:20px 18px}
 }
 @media (max-width:820px){.nav{gap:12px;font-size:14px;justify-content:space-between}}
+/* Логотип-плитка, памятка, печать */
+.brand img{width:40px;height:40px;border-radius:9px}
+.hero-shield{border-radius:22%}
+.memo-link{margin-top:10px;font-family:var(--ui);font-size:16px}
+.memo-link a{color:var(--green2);font-weight:700}
+button.btn{cursor:pointer}
+.print-row{margin-top:24px}
+@media (max-width:440px){.nav a[href$="pamyatka/"]{display:none}}
+@media print{
+  .nav,.top-phone,.bar,.cta,.print-row,.hero::after,footer,#kontakty,#voprosy,.skip,.crumbs{display:none!important}
+  .hero{background:#fff!important;color:var(--ink)!important;padding:0 0 12px!important}
+  .hero h1{color:var(--green)}
+  .hero p.sub{color:var(--muted)}
+  body{font-size:11.5pt}
+  section{padding:10px 0!important}
+  .memo-card,.memo-warn{break-inside:avoid;border:1px solid #cfcabd;background:#fff!important}
+  .sq li{font-size:11pt}
+}
+.print-only{display:none}
+@media print{
+  @page{size:A4;margin:10mm}
+  .print-only{display:flex}
+  .print-head{align-items:center;gap:14px;margin-bottom:6px}
+  .print-head img{border-radius:12px;border:1px solid #cfcabd}
+  .print-head b{display:block;font:700 18pt/1.1 var(--head);color:var(--green)}
+  .print-head span{font:400 10pt var(--ui);color:var(--muted)}
+  .print-foot{margin-top:10px;padding:10px 14px;border-radius:10px;background:var(--green)!important;color:#fff;font:400 11pt var(--ui);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .print-foot b{color:var(--yellow)}
+  .memo-grid{grid-template-columns:1fr 1fr!important;gap:10px;margin-top:10px}
+  .memo-col{gap:10px}
+  .memo-warn{margin-top:10px}
+  .memo-warn .sq{grid-template-columns:1fr 1fr!important;gap:6px 20px}
+  .memo-card,.memo-warn{padding:12px 14px}
+  .memo-card h3,.memo-warn h3{font-size:14pt;margin-bottom:8px}
+  .sq li{font-size:10pt;line-height:1.4;margin-bottom:5px}
+  .hero h1{font-size:24pt}
+  .hero p.sub{font-size:11pt;margin-top:6px}
+  .badge{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media print{
+  .top{background:#fff!important;color:var(--green)!important;border-bottom:2px solid var(--green)}
+  .top .wrap{height:auto;padding:0 0 8px}
+  .brand{font-size:15pt}
+  .brand img{width:44px;height:44px;border:1px solid #cfcabd}
+  .hero{padding-top:10px!important}
+}
+@media print{.print-foot{display:block!important}.print-foot b{white-space:nowrap}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит уничтожение тараканов?", "acceptedAnswer": {"@type": "Answer", "text": "Квартира на одну–три комнаты — 4 000 ₽. Квартиры от четырёх комнат, частные дома и кафе рассчитываем отдельно — по телефону или по фото."}}, {"@type": "Question", "name": "Почему не помогают средства из магазина?", "acceptedAnswer": {"@type": "Answer", "text": "Бытовые средства достают в основном тех тараканов, что вышли на открытое место. Основная колония и яйца остаются в щелях, за техникой и в вентиляции — туда и нужно добраться."}}, {"@type": "Question", "name": "Тараканы приходят от соседей. Есть ли смысл обрабатывать только свою квартиру?", "acceptedAnswer": {"@type": "Answer", "text": "Есть, если одновременно защитить пути проникновения: стыки труб, вентиляцию, щели. Ещё надёжнее — обработать соседние квартиры в один день."}}, {"@type": "Question", "name": "Как быстро пропадут тараканы?", "acceptedAnswer": {"@type": "Answer", "text": "Активность заметно падает в течение нескольких дней. Гелевые приманки действуют постепенно: тараканы сами разносят средство по колонии."}}, {"@type": "Question", "name": "Какая гарантия?", "acceptedAnswer": {"@type": "Answer", "text": "30 дней. Если тараканы вернутся при соблюдении рекомендаций, повторим обработку бесплатно."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://dezservice48.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Тараканы", "item": "https://dezservice48.github.io/tarakany/"}]}</script>
@@ -233,18 +280,12 @@ footer a{color:#C9D8D4}
 </head>
 <body>
 <a class="skip" href="#main">К содержанию</a>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="logo" viewBox="0 0 64 64">
-<path d="M32 4 56 12v18c0 15-10 25-24 30C18 55 8 45 8 30V12Z" fill="#0E3B36" stroke="#F5F3EE" stroke-width="2.5" stroke-linejoin="round"/>
-<g fill="none" stroke="#1F7A63" stroke-width="2"><circle cx="32" cy="32" r="15"/><path d="M32 12v8M32 44v8M12 32h8M44 32h8"/></g>
-<g stroke="#fff" stroke-width="1.8" stroke-linecap="round" fill="none"><path d="M28 29l-6-3M28 34h-7M28 39l-5 4M36 29l6-3M36 34h7M36 39l5 4M30.5 22.5 26 16M33.5 22.5 38 16"/></g>
-<ellipse cx="32" cy="34" rx="5.5" ry="9" fill="#fff"/><circle cx="32" cy="24" r="3.2" fill="#fff"/>
-<path d="M19 47 45 19" stroke="#FFC61A" stroke-width="4.5" stroke-linecap="round"/></symbol></svg>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="../" aria-label="Дез Сервис Липецк — на главную">
-      <svg aria-hidden="true" width="36" height="36"><use href="#logo"/></svg><span>Дез Сервис<br>Липецк</span>
+      <img src="../logo-96.png" alt="" width="40" height="40"><span>Дез Сервис<br>Липецк</span>
     </a>
-    <nav class="nav" aria-label="Разделы"><a href="../klopy/">Клопы</a><a href="../tarakany/" aria-current="page">Тараканы</a><a href="../gryzuny/">Грызуны</a><a href="../biznes/">Для бизнеса</a><a href="../#ceny">Цены</a></nav>
+    <nav class="nav" aria-label="Разделы"><a href="../klopy/">Клопы</a><a href="../tarakany/" aria-current="page">Тараканы</a><a href="../gryzuny/">Грызуны</a><a href="../biznes/">Для бизнеса</a><a href="../pamyatka/">Памятка</a><a href="../#ceny">Цены</a></nav>
     <a class="top-phone" href="tel:+79204717101">8 920 471-71-01</a>
   </div>
 </header>
@@ -315,8 +356,10 @@ footer a{color:#C9D8D4}
 
   <section class="memo " id="podgotovka">
     <div class="wrap">
+      
       <h2>Памятка клиенту</h2>
       <p class="lead">Подготовка к обработке и что делать после неё. Прочитайте заранее: половина успеха решается до приезда специалиста и в первые дни после него.</p>
+      <p class="memo-link"><a href="../pamyatka/">Открыть памятку отдельной страницей</a> — её удобно сохранить, распечатать или переслать.</p>
       <div class="memo-grid">
         <div class="memo-card">
           <h3><span class="badge">1</span>Подготовка</h3>
@@ -360,6 +403,7 @@ footer a{color:#C9D8D4}
         </ul>
       </div>
       <p class="note">Все препараты применяем строго по инструкции производителя.</p>
+      
     </div>
   </section>
   <section class="cream" id="voprosy">
@@ -383,7 +427,7 @@ footer a{color:#C9D8D4}
 <footer>
   <div class="wrap">
     <span>© 2026 Дез Сервис Липецк. ИП ФАМИЛИЯ И.О., ОГРНИП 000000000000000</span>
-    <nav aria-label="Нижнее меню"><a href="../klopy/">Клопы</a><a href="../tarakany/">Тараканы</a><a href="../gryzuny/">Мыши и крысы</a><a href="../biznes/">Для бизнеса</a><a href="../politika.html">Политика конфиденциальности</a></nav>
+    <nav aria-label="Нижнее меню"><a href="../klopy/">Клопы</a><a href="../tarakany/">Тараканы</a><a href="../gryzuny/">Мыши и крысы</a><a href="../biznes/">Для бизнеса</a><a href="../pamyatka/">Памятка клиенту</a><a href="../politika.html">Политика конфиденциальности</a></nav>
   </div>
 </footer>
 <nav class="bar" aria-label="Быстрая связь">
