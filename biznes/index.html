@@ -194,7 +194,6 @@ footer a{color:#C9D8D4}
   .ptable td{font-size:16px}
 }
 @media (min-width:821px){footer{padding-bottom:28px}}
-@media (max-width:440px){.nav a[href$="#ceny"]{display:none}}
 
 /* Editorial */
 .crumbs,.price-tag,.bar,footer,.more,.facts,.ptable th small,.note{font-family:var(--ui)}
@@ -225,7 +224,7 @@ footer a{color:#C9D8D4}
   .memo-grid,.memo-warn .sq{grid-template-columns:1fr}
   .memo-card,.memo-warn{padding:20px 18px}
 }
-@media (max-width:820px){.nav{gap:12px;font-size:14px;justify-content:space-between}}
+@media (max-width:820px){.nav{flex-wrap:wrap;overflow:visible;justify-content:flex-start;gap:4px 18px;font-size:15px}.nav a{padding:4px 0}}
 /* Логотип-плитка, памятка, печать */
 .brand img{width:40px;height:40px;border-radius:9px}
 .hero-shield{border-radius:22%}
@@ -233,7 +232,6 @@ footer a{color:#C9D8D4}
 .memo-link a{color:var(--green2);font-weight:700}
 button.btn{cursor:pointer}
 .print-row{margin-top:24px}
-@media (max-width:440px){.nav a[href$="pamyatka/"]{display:none}}
 @media print{
   .nav,.top-phone,.bar,.cta,.print-row,.hero::after,footer,#kontakty,#voprosy,.skip,.crumbs{display:none!important}
   .hero{background:#fff!important;color:var(--ink)!important;padding:0 0 12px!important}
@@ -359,7 +357,7 @@ button.btn{cursor:pointer}
 </main>
 <footer>
   <div class="wrap">
-    <span>© 2026 Дез Сервис Липецк. ИП ФАМИЛИЯ И.О., ОГРНИП 000000000000000</span>
+    <span>© 2026 Дез Сервис Липецк. ИП Буряков С.&nbsp;В., ОГРНИП 326480000027698, ИНН 482415662800</span>
     <nav aria-label="Нижнее меню"><a href="../klopy/">Клопы</a><a href="../tarakany/">Тараканы</a><a href="../gryzuny/">Мыши и крысы</a><a href="../biznes/">Для бизнеса</a><a href="../pamyatka/">Памятка клиенту</a><a href="../politika.html">Политика конфиденциальности</a></nav>
   </div>
 </footer>
